@@ -1,6 +1,7 @@
 package com.biolab.plataformadecursofiama.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,5 +20,6 @@ public class Curso {
     private String nome;
     private int cargahoraria;
     @OneToMany(mappedBy = "curso")
+    @JsonIgnore
     private List<Matricula> matriculas;
 }
